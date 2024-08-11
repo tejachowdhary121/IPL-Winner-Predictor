@@ -1,11 +1,11 @@
-from flask import flask, render_template, request
+from flask import Flask, render_template, request
 import joblib
 import pandas as pd
 
+app = Flask(__name__)
+
 # Load the trained model
 model = joblib.load('winner_prediction_catboost_classifier.pkl')
-
-app = Flask(__name__)
 
 @app.route('/')
 def home():
